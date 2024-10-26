@@ -1,16 +1,17 @@
 <?php
 
-namespace Kanboard\Plugin\Chat\Controller;
+namespace Kanboard\Plugin\ChatBot\Controller;
 
 use Kanboard\Controller\BaseController;
 
 /**
  * Class ChatController
  *
- * @package Kanboard\Plugin\Chat\Controller
+ * @package Kanboard\Plugin\ChatBot\Controller
+ * @author  Damien Trog
  * @author  Frederic Guillot
- * @property \Kanboard\Plugin\Chat\Model\ChatMessageModel  $chatMessageModel
- * @property \Kanboard\Plugin\Chat\Model\ChatUserModel     $chatUserModel
+ * @property \Kanboard\Plugin\ChatBot\Model\ChatMessageModel  $chatMessageModel
+ * @property \Kanboard\Plugin\ChatBot\Model\ChatUserModel     $chatUserModel
  */
 class ChatController extends BaseController
 {
@@ -42,7 +43,7 @@ class ChatController extends BaseController
                 'lastMessageId' => $this->chatMessageModel->getLastMessageId(),
                 'mentioned'     => $this->chatUserModel->hasUserMention($userId),
                 'nbUnread'      => $this->chatUserModel->countUnreadMessages($userId),
-                'messages'      => $this->template->render('Chat:chat/messages', array(
+                'messages'      => $this->template->render('ChatBot:chat/messages', array(
                     'messages' => $this->chatMessageModel->getMessages($userId),
                 )),
             ));
@@ -75,7 +76,7 @@ class ChatController extends BaseController
 
     protected function renderWidget()
     {
-        return $this->template->render('Chat:chat/widget', array(
+        return $this->template->render('ChatBot:chat/widget', array(
             'messages' => $this->chatMessageModel->getMessages($this->userSession->getId()),
         ));
     }

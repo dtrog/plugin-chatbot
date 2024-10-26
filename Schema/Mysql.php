@@ -1,6 +1,6 @@
 <?php
 
-namespace Kanboard\Plugin\Chat\Schema;
+namespace Kanboard\Plugin\ChatBot\Schema;
 
 use PDO;
 
@@ -8,13 +8,13 @@ const VERSION = 2;
 
 function version_2(PDO $pdo)
 {
-    $pdo->exec('ALTER TABLE `chat_messages` CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci');
-    $pdo->exec('ALTER TABLE `chat_users` CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci');
+    $pdo->exec('ALTER TABLE `chatbot_messages` CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci');
+    $pdo->exec('ALTER TABLE `chatbot_users` CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci');
 }
 
 function version_1(PDO $pdo)
 {
-    $pdo->exec('CREATE TABLE chat_messages (
+    $pdo->exec('CREATE TABLE chatbot_messages (
         `id` INT NOT NULL AUTO_INCREMENT,
         `message` TEXT NOT NULL,
         `user_id` INT NOT NULL,
@@ -23,7 +23,7 @@ function version_1(PDO $pdo)
         PRIMARY KEY(id)
     ) ENGINE=InnoDB CHARSET=utf8');
 
-    $pdo->exec('CREATE TABLE chat_users (
+    $pdo->exec('CREATE TABLE chatbot_users (
         `user_id` INT NOT NULL UNIQUE,
         `message_id` INT DEFAULT 0,
         `mentioned` TINYINT(1) DEFAULT 0,

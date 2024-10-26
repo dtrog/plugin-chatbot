@@ -1,18 +1,19 @@
 <?php
 
-namespace Kanboard\Plugin\Chat\Model;
+namespace Kanboard\Plugin\ChatBot\Model;
 
 use Kanboard\Core\Base;
 
 /**
  * Class ChatUserModel
  *
- * @package Kanboard\Plugin\Chat\Model
+ * @package Kanboard\Plugin\ChatBot\Model
+ * @author  Damien Trog
  * @author  Frederic Guillot
  */
 class ChatUserModel extends Base
 {
-    const TABLE = 'chat_users';
+    const TABLE = 'chatbot_users';
 
     /**
      * Get last read messageId for a given user

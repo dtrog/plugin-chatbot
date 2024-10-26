@@ -2,7 +2,7 @@
 
 require_once 'tests/units/Base.php';
 
-use Kanboard\Plugin\Chat\Plugin;
+use Kanboard\Plugin\ChatBot\Plugin;
 
 class PluginTest extends Base
 {

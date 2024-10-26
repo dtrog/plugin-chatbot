@@ -1,4 +1,4 @@
-plugin=Chat
+plugin=ChatBot
 
 all:
 	@ echo "Build archive for plugin ${plugin} version=${version}"
