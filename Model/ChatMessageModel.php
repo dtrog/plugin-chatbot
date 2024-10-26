@@ -1,6 +1,6 @@
 <?php
 
-namespace Kanboard\Plugin\Chat\Model;
+namespace Kanboard\Plugin\ChatBot\Model;
 
 use Kanboard\Core\Base;
 use Kanboard\Model\UserModel;
@@ -8,14 +8,14 @@ use Kanboard\Model\UserModel;
 /**
  * Class ChatMessageModel
  *
- * @package  Kanboard\Plugin\Chat\Model
+ * @package  Kanboard\Plugin\ChatBot\Model
  * @author   Frederic Guillot
  *
- * @property \Kanboard\Plugin\Chat\Model\ChatUserModel $chatUserModel
+ * @property \Kanboard\Plugin\ChatBot\Model\ChatUserModel $chatUserModel
  */
 class ChatMessageModel extends Base
 {
-    const TABLE = 'chat_messages';
+    const TABLE = 'chatbot_messages';
     const MAX_MESSAGES = 1000;
 
     /**

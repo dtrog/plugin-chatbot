@@ -55,7 +55,7 @@
 
 .chat-widget-maximized {
     width: 800px;
-    height: 450px;
+    height: 700px;
 }
 
 .chat-widget-mentioned {
@@ -76,13 +76,13 @@
 }
 
 .chat-widget-maximized #chat-widget-messages-container {
-    min-height: 420px;
+    min-height: 520px;
 }
 
 .chat-messages {
     -ms-overflow-style: none;
     overflow: scroll;
-    position: absolute;
+    position: relative;
     width: 99%;
     bottom: 0;
     left: 0;
@@ -93,7 +93,7 @@
 }
 
 .chat-widget-maximized .chat-messages {
-    max-height: 415px;
+    max-height: 650px;
 }
 
 .chat-widget-maximized #chat-form input[type='text'] {

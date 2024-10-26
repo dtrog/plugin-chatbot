@@ -5,5 +5,5 @@ return array(
     'Refresh Interval' => 'Fréquence de rafraîchissement',
     'Period in second (3 seconds by default)' => 'Période en seconde (3 secondes par défaut)',
     'Chat' => 'Chat',
-    'Minimalist Chat for Kanboard.' => 'Chat minimaliste pour Kanboard.',
+    'Minimalistic ChatBot for Kanboard.' => 'ChatBot minimaliste pour Kanboard.',
 );

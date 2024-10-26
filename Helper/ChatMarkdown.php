@@ -1,13 +1,14 @@
 <?php
 
-namespace Kanboard\Plugin\Chat\Helper;
+namespace Kanboard\Plugin\ChatBot\Helper;
 
 use Kanboard\Core\Markdown;
 
 /**
  * Class ChatMarkdown
  *
- * @package Kanboard\Plugin\Chat\Helper
+ * @package Kanboard\Plugin\ChatBot\Helper
+ * @author  Damien Trog
  * @author  Frederic Guillot
  */
 class ChatMarkdown extends Markdown

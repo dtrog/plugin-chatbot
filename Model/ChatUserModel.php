@@ -1,18 +1,19 @@
 <?php
 
-namespace Kanboard\Plugin\Chat\Model;
+namespace Kanboard\Plugin\ChatBot\Model;
 
 use Kanboard\Core\Base;
 
 /**
  * Class ChatUserModel
  *
- * @package Kanboard\Plugin\Chat\Model
+ * @package Kanboard\Plugin\ChatBot\Model
+ * @author  Damien Trog
  * @author  Frederic Guillot
  */
 class ChatUserModel extends Base
 {
-    const TABLE = 'chat_users';
+    const TABLE = 'chatbot_users';
 
     /**
      * Get last read messageId for a given user
@@ -110,15 +111,17 @@ class ChatUserModel extends Base
      * @param string $message
      * @param string $currentUserName
      */
-    public function createUserMentions($message, $currentUserName)
+    public function createUserMentions($message, $currentUserName): array
     {
         $users = $this->getMentionedUsers($message);
-
+        $mentionedUsers = [];
         foreach ($users as $username) {
             if ($currentUserName !== $username) {
                 $this->setUserMention($username);
+                $mentionedUsers[] = $username;
             }
         }
+        return $mentionedUsers;
     }
 
     /**

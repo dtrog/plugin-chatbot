@@ -1,7 +1,7 @@
 <?php
 
-use Kanboard\Plugin\Chat\Model\ChatMessageModel;
-use Kanboard\Plugin\Chat\Model\ChatUserModel;
+use Kanboard\Plugin\ChatBot\Model\ChatMessageModel;
+use Kanboard\Plugin\ChatBot\Model\ChatUserModel;
 
 require_once __DIR__.'/BaseModelTest.php';
 
