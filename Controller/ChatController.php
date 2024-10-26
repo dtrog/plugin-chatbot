@@ -54,10 +54,9 @@ class ChatController extends BaseController
                 'lastMessageId' => $this->chatMessageModel->getLastMessageId(),
                 'mentioned'     => $this->chatUserModel->hasUserMention($userId),
                 'nbUnread'      => $this->chatUserModel->countUnreadMessages($userId),
-                'messages'      => $this->template->render('ChatBot:chat/messages', array(
-                    'messages' => $this->chatMessageModel->getMessages($userId),
-                )),
-            ));
+                'messages'      => $this->template->render('Chat:chat/messages', array(
+                    'messages' => $this->chatMessageModel->getMessages($userId)))
+                ));
         } else {
             $this->response->status(304);
         }
@@ -88,8 +87,8 @@ class ChatController extends BaseController
     protected function renderWidget()
     {
         return $this->template->render('ChatBot:chat/widget', array(
-            'messages' => $this->chatMessageModel->getMessages($this->userSession->getId()),
-        ));
+            'messages' => $this->chatMessageModel->getMessages($this->userSession->getId()
+        )));
     }
 
     protected function askChatBot($message)
